@@ -26,6 +26,10 @@ job('HelloWorldSpringApp') {
         }
     }
 
+    triggers{
+        scm('H/5 * * * *')
+    }
+
     // Post-build actions
     publishers {
         extendedEmail {
