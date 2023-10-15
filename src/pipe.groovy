@@ -7,8 +7,10 @@ node {
     }
 
     stage('Build') {
-            // Build the Spring Boot application
-            sh 'mvn clean install'
+        def mvnHome = tool name: 'maven', type: 'maven'
+        sh "${mvnHome}/bin/mvn -version"
+        // Build the Spring Boot application
+        sh 'mvn clean install'
     }
 
     stage('Test') {
