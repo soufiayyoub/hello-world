@@ -8,18 +8,26 @@ node {
     }
 
     stage('Build') {
+            // Set the Maven version (you can customize this)
+            mavenInstallation('Maven')
+            goals('clean install')
+            // Define the POM file path
+            rootPOM('pom.xml')
+
             // Build the Spring Boot application
-            sh 'mvn clean install'
+            // sh 'mvn clean install'
     }
 
     stage('Test') {
             // Run tests if any
-            sh 'mvn test'
+            // sh 'mvn test'
+            goals('test')
+
     }
 
     stage('Deploy') {
             // Deploy the Spring Boot application
-            sh 'java -jar target/your-app-name.jar &'
+            sh 'java -jar target/your-app-name.jar'
     }
 
     // post {
