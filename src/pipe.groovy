@@ -3,26 +3,18 @@ node {
 
     stage('Checkout') {
             // Check out the source code from your Git repository
-            // git url: 'hhttps://github.com/soufiayyoub/hello-world.git'
+            // git url: 'https://github.com/soufiayyoub/hello-world.git'
             checkout scm
     }
 
     stage('Build') {
-            // Set the Maven version (you can customize this)
-            mavenInstallation('Maven')
-            goals('clean install')
-            // Define the POM file path
-            rootPOM('pom.xml')
-
             // Build the Spring Boot application
-            // sh 'mvn clean install'
+            sh 'mvn clean install'
     }
 
     stage('Test') {
             // Run tests if any
-            // sh 'mvn test'
-            goals('test')
-
+            sh 'mvn test'
     }
 
     stage('Deploy') {
