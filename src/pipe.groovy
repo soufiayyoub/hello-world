@@ -5,7 +5,8 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Check out the source code from your Git repository
-                git url: 'hhttps://github.com/soufiayyoub/hello-world.git'
+                // git url: 'hhttps://github.com/soufiayyoub/hello-world.git'
+                checkout scm
             }
         }
 
