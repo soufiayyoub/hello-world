@@ -10,12 +10,12 @@ node {
         def mvnHome = tool name: 'maven', type: 'maven'
         sh "${mvnHome}/bin/mvn -version"
         // Build the Spring Boot application
-        sh 'mvn clean install'
+        sh '${mvnHome}/bin/mvn clean install'
     }
 
     stage('Test') {
             // Run tests if any
-            sh 'mvn test'
+            sh '${mvnHome}/bin/mvn test'
     }
 
     stage('Deploy') {
