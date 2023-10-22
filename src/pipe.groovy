@@ -4,7 +4,7 @@ node {
     // agent any // You can specify a specific agent based on your environment
     stage('Checkout') {
             // Check out the source code from your Git repository
-            // git url: 'https://github.com/soufiayyoub/hello-world.git'
+            https://github.com/soufiayyoub/hello-world.git
             checkout scm
     }
 
