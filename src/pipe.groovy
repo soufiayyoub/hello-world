@@ -19,10 +19,10 @@ node {
             sh "${mvnHome}/bin/mvn test"
     }
 
-    stage('Deploy') {
-            // Deploy the Spring Boot application
-            sh 'java -jar target/demo-0.0.1-SNAPSHOT.jar'
-    }
+    // stage('Deploy') {
+    //         // Deploy the Spring Boot application
+    //         sh 'java -jar target/demo-0.0.1-SNAPSHOT.jar'
+    // }
 
     // post {
     //     success {
